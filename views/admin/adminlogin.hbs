@@ -1,0 +1,53 @@
+<div class="container" style="margin-top: 2rem;">
+            {{#if adminsuccess}}
+            <div class="row ">
+            <div class="col-md-6">
+                <div>
+                <h2 style=" border-bottom: 3px solid rgba(255, 245, 241, 0.769);">
+           <a style="font-size: 50px; color: white;
+              font-weight: bolder; font-style: italic ; text-shadow: 2px 2px 5px rgb(212, 160, 47);" href="#">MyKart <span style="font-size: 26px;color: rgb(210, 239, 68);">shop</span> </a></h2>
+                </div>
+            <h1>welcome to admin control</h1>
+            <p class="text-white">Now you have all access to Edit product details, add new products and delete any product by category...!! </p>
+            <a href="/admin/adminlogout" class="btn btn-dark">Logout</a>
+            </div>
+            <div class="col-md-6 text-center pt-4">
+             <div class="col-md-12 p-2  ">
+             <a class="btn border-light text-white bg-dark btn-block py-3" href="/admin/category/mobileproducts">Mobiles</a></div>
+            <div class="col-md-12 p-2">
+            <a class="btn border-light text-white bg-dark btn-block py-3" href="/admin/category/laptopproducts">Laptops</a>
+            </div>
+           <div class="col-md-12 p-2">
+            <a class="btn border-light text-white bg-dark btn-block py-3" href="/admin/category/tabletproducts">Tablets</a>
+            </div>
+            <div class="col-md-12 p-2">
+            <a class="btn border-light text-white bg-dark btn-block py-3" href="/admin/category/smartwatchproducts" >Smartwatch</a>
+            </div>
+            </div>
+            {{else}}
+            <div class="row">
+            <div class="col-md-8">
+            <form action="/admin/adminlogin" method="POST">
+                <div class="form-group pt-4">
+                    <label class="text-white"  for="">Email</label>
+                    <input type="text" name="email" class="form-control" placeholder="enter admin email">
+                    {{#if EmailError}}
+                <label style="color:red; background-color: rgb(233, 230, 147);border-radius: 3px;">Invalid Email Id</label>
+                    {{/if}}
+                </div> 
+                <div class="form-group pt-3">
+                    <label class="text-white" for="">Password</label>
+                    <input type="text" name="password" class="form-control" placeholder="enter admin password">
+                    {{#if PasswordError}}
+                       <label style="color: red;background-color: rgb(233, 230, 147);border-radius: 3px;">Invalid password</label>   
+                    {{/if}}
+                    {{#if EmailError}}
+                <label style="color:red;background-color: rgb(233, 230, 147);border-radius: 3px;">Invalid password</label>
+                    {{/if}}
+                </div> 
+                <button type="submit" class="btn btn-success border-white px-5 float-right ">Login</button>
+            </form>
+            </div>
+            </div>
+            {{/if}}
+</div>

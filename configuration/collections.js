@@ -1,0 +1,12 @@
+module.exports=
+{
+    USER_COLLECTION:'Userdatas',
+    CART_COLLECTION:'CartItems',
+    ORDER_COLLECTION:'Order',
+    MOBILE_COLLECTION:'Mobiles',
+    LAPTOP_COLLECTION:'Laptops',
+    TABLET_COLLECTION:'Tablets',
+    SMARTWATCH_COLLECTION:'Smartwatch',
+    ALLPRODUCT_COLLECTION:'Allproducts',
+    ADMIN_DATAS:'Admin'
+}  

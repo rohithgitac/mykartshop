@@ -1,0 +1,74 @@
+<style>
+.dropdown-menu{
+  background-color: rgb(11, 103, 209);
+}
+.dropdown-item{
+  color: white;
+}
+a.hoverimport:hover{
+  background-color: rgb(207, 231, 149)!important;
+  border: 1px solid rgb(18, 16, 16) !important;
+  color:rgb(18, 16, 16) !important;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+</style>
+<header style="margin: 0; box-sizing: border-box; ">
+    <nav class="navbar navbar-expand-md navbar-dark py-1 fixed-top" 
+    style=" border-bottom: 3px solid rgba(255, 245, 241, 0.769);  background-image: linear-gradient(to right, rgb(9, 48, 157) , rgb(151, 199, 109),rgba(9, 48, 120, 0.737));">
+      <a class="navbar-brand" style="font-size: 50px;
+   font-weight: bolder; font-style: italic ; text-shadow: 2px 2px 5px rgb(212, 160, 47);" href="/">MyKart <span style="font-size: 26px;color: rgb(210, 239, 68);">shop</span> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav pl-1">
+             <li class="dropdown nav-item p-1">
+            <a class="nav-link dropdown-toggle border bg-primary rounded text-center text-white" href="/" id="navbardrop" data-toggle="dropdown">
+        Category
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/">Home</a>
+        <div class="dropdown-divider"></div>
+        <a  class="dropdown-item" href="/section/mobiles">Mobiles</a>
+        <a class="dropdown-item" href="/section/laptops">Laptops</a>
+        <a class="dropdown-item" href="/section/tablets">Tablets</a>
+        <a class="dropdown-item" href="/section/smartwatch">Smartwatch</a>
+      </div>
+      </li>
+          
+          <li class="nav-item p-1">
+            <a class="nav-link border bg-primary rounded text-center" style="color: azure;" href="/cart">
+            <i class='fas fa-dolly' style="color: rgb(153, 249, 140);"></i>Cart <span class="badge badge-warning" id="cart-count">{{cartsize}}</span></a>
+           </li>
+           <li class="nav-item p-1">
+            <a  class=" nav-link border bg-primary rounded text-center" style="color: azure;" href="/admin">admin</a>
+          </li>
+          {{#if userinfos}}
+          <li class="nav-item p-1">
+            <a class="nav-link border bg-primary rounded text-center" style="color: rgb(255, 255, 253);" href="/orders">Orders</a>
+          </li>
+          {{/if}}
+        </ul>
+        <ul class="navbar-nav ml-auto mr-3 ">
+          {{#if userinfos}}
+          <li class="nav-item  my-auto mx-auto pr-md-3"><a href="/profile"><i style='font-size:30px;border: 3px solid #abb0f3;  border-radius: 16px; color:rgba(75, 80, 75, 0.984);background-color: rgb(205, 227, 146);' class='far'>&#xf2bd;</i></a></li>
+          <li class="nav-item  my-auto"><a  class="nav-link border bg-secondary rounded text-center text-white hoverimport"  href="/logout">{{userinfos.name}}-logout</a></li>
+          {{else}}
+          <li class="nav-item p-1"><a class="nav-link border bg-warning rounded text-center text-dark"  href="/login"><i class='fas fa-sign-out-alt'></i>Login/signup</a> </li>
+          {{/if}}
+            
+        </ul>
+     </nav>
+        
+      
+      </div>
+    </nav>
+  </header>
+

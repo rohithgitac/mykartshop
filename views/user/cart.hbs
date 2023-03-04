@@ -1,0 +1,48 @@
+<section style="margin-top: 6rem;">
+<div class="container">
+<h2  class="text-center">Cart items</h2 > <p style="color:white">User : {{userinfos.name}}</p>
+<table class="table table-bordered">
+    <thead>
+    <tr class="text-center my-auto">
+        <th class="col-md-4">Image</th>
+        <th class="col-md-3">Product</th>
+        <th class="col ">Quantity</th>
+        <th class="col">Unit Price</th>
+        <th class="col">Action</th>
+    </tr>
+    </thead>
+    <tbody class="text-white">
+        {{#each pro}}
+        <tr class="text-center ">
+            
+            <td style="padding: 0%;"><img style="width: 85px; height:auto;" src="/{{this.product.category}}images/{{this.item}}.jpg" alt="sorry"></td>
+            <td class="my-auto pt-3">{{this.product.name}}</td>
+             <td class="my-auto">
+            <div class="container mx-auto my-auto pt-2">
+            <div class="row ">
+            <div class="col-md-4 my-auto">
+           <button class="cart-item-count btn-danger" onclick="changeQuantity('{{this._id}}','{{this.item}}',-1)">-</button>
+            </div>
+            <div class="col-md-4 my-auto">
+            <p class="my-auto" id="{{this.item}}">{{this.quantity}}</p>
+            </div>
+             <div class="col-md-4 my-auto">
+            <button class="cart-item-count btn-success" onclick="changeQuantity('{{this._id}}','{{this.item}}',1)">+</button>
+            </div></div>
+            </div></td>
+            <td  class="my-auto  pt-3">Rs.<b class="my-auto">{{this.product.price}}</b>/-</td>
+    
+            <td  class="my-auto  pt-3"><a href="" class="btn btn-danger" onclick="changeQuantity('{{this._id}}','{{this.item}}',-2)">Remove</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<hr >
+<h3 class="text-right mr-5 "><b><i>Total : Rs.<span id="total">{{totalprice}}</span> </i></b>/-
+<br>
+<a id="placeorder" href="/place-order/{{totalprice}}" class="btn btn-success border font-weight-bolder px-5 py-3 my-3">place order</a></h3>
+<hr >
+</div>
+</section>
+
+

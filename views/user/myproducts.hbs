@@ -1,0 +1,39 @@
+<style>
+  .btn:hover{
+    border: 3px solid rgb(66, 135, 214);
+    border-radius: 1px;
+    background-color: aliceblue;
+    color: darkred;
+    
+  }
+  .card:hover{
+    border: 2px solid rgb(173, 164, 164);
+  }
+</style>
+<div  style=" background-image: linear-gradient(to right, rgb(40, 70, 145) , rgb(67, 194, 205),rgba(35, 81, 167, 0.737));">
+<div class="container" style="margin-top: 6rem;" >
+      <h1 class="pt-2" style="text-shadow: 2px -2px 0px black;; color: rgb(208, 227, 149); font-family: Verdana, Geneva, Tahoma, sans-serif;">Latest trending {{categorys}}</h1>
+      <div class="row">
+        {{#each productarray}}
+        <div class="col-md-4 text-center p-2 mx-auto my-auto ">
+
+          <div class="card mx-auto" >
+          
+            <img class="card-img-top mx-auto pt-1" style="height:13rem;width: 15rem;"
+             src="/{{this.category}}images/{{this._id}}.jpg"
+              alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">{{this.name}}</h4>
+              <p class="card-text">{{this.category}}</p>
+              <p class="card-text">
+              <h6>Rs.<b>{{this.price}}</b>/-</h6>
+              </p>
+              <p class="card-text">{{this.description}}</p>
+              <button class="btn btn-primary " onclick="addtofunc('{{this.category}}','{{this._id}}')">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+</div> 

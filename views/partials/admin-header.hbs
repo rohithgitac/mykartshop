@@ -1,0 +1,35 @@
+<header style="margin: 0; box-sizing: border-box;" >
+    <nav class="navbar navbar-expand-md bg-warning navbar-dark py-3">
+      <a class="navbar-brand" style="font: size 40px;;
+   font-weight: bolder;;" href="/admin">MyKart admin page</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav pl-4">
+          <li class="nav-item px-2">
+            <a class="nav-link btn-light " style="color: black;" href="/admin/allproducts">All products</a>
+          </li>
+          <li class="nav-item px-2">
+            <a class="nav-link btn-light" style="color: black;" href="/admin/viewusers">All users</a>
+          </li>
+          <li class="nav-item px-2 ">
+            <a class="nav-link btn-light" style="color: black;" href="/admin/vieworders">All orders</a>
+          </li>
+          </ul>
+          <ul class="navbar-nav  ml-auto mr-4">
+        
+        {{#if adminsuccess}}
+        <li class="nav-item px-3">
+          <a class="nav-link" href="">ADMIN-LOGGED IN</a>
+        </li>
+        <li class="nav-item p-1 px-3"><a class="nav-link border bg-primary rounded text-center text-white px-3"  href="/admin/adminlogout">Logout</a> </li>
+        {{else}}
+        <li class="nav-item px-3">
+          <a class="nav-link" href="">ADMIN-LOGGED OUT</a>
+        </li>
+        {{/if}}
+        </ul>
+      </div>
+    </nav>
+  </header>

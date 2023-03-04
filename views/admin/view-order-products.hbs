@@ -1,0 +1,30 @@
+<section style="margin-top: 1rem;" >
+    <div class="container ">
+  
+  <div class="row mt-2 text-white" >
+    <h1 >Products in this Order</h1> 
+  </div>
+  <table class="table table-bordered mt-2 ">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit price</th>
+        <th>Category</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody class="text-white">
+        {{#each prolist}}
+      <tr>
+        <td>{{this.product.name}}</td>
+        <td>{{this.quantitycount}}</td>
+        <td>{{this.product.price}}</td>
+        <td>{{this.product.category}}</td>
+        <td class="text-center"><img  style=" width: 70px; height:80px;" src="/allproductimages/{{this.product._id}}.jpg" alt="its a phone"></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+</section>

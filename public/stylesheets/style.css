@@ -1,0 +1,63 @@
+*
+{
+    box-sizing: border-box;
+}
+body,.partialbody{
+    margin: 0;
+    background-image: linear-gradient(to right, rgb(40, 70, 145) , rgb(67, 194, 205),rgba(35, 81, 167, 0.737));
+    
+}
+.firstpage{
+   /* background-image: linear-gradient(to right, rgb(31, 131, 31) , rgb(67, 194, 205),rgba(35, 81, 167, 0.737)); */
+   height: 100%;
+}
+.mainhead
+{
+    font-family: Georgia, serif;
+    color: rgb(245, 247, 134);
+    text-shadow: 5px 6px 10px #050505;
+    font-stretch:expanded ;font-weight: bolder;
+    animation-name: example;
+  animation-duration: 15s;
+}
+@keyframes example {
+    0%   {color: red;} 
+    10% {color: #f6efef;}
+    25%  {color: yellow;}
+    50%  {color: rgb(148, 148, 222);}
+    70% {color: deeppink;font-stretch: expanded;}
+    85% {color: orangered;}
+    100% {color: rgb(230, 233, 36);}
+  }
+.mobiles,.laptops,.smartwatches,.tablets
+{
+    border: 3px solid rgba(255, 245, 241, 0.769);
+    border-radius: 25px;
+    color: rgba(255, 255, 255, 0.992);
+    padding: 1vh;
+    height: 60vh;
+    text-align: left;
+    text-shadow: 5px 6px 10px #000000;
+    
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+}
+.categorybox :hover
+{
+  background-color: rgba(222, 207, 207, 0.973);
+  color: rgb(0, 0, 0);
+  border-color: #504c4c;
+  text-shadow: greenyellow;
+  border-radius: 5px;
+ 
+}
+#viewbutton:hover{
+  border: 5px solid rgb(60, 132, 232);
+  background-color: rgba(244, 239, 239, 0.973);
+  color: rgb(0, 0, 0);
+  text-shadow: 5px 6px 10px #000000;
+}
+
+

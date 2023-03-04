@@ -1,0 +1,36 @@
+<section style="margin-top: 2rem;" >
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="text-center">Add product</h2>
+                <form action="/admin/category/{{allproducts}}/add-mobile" method="post" enctype="multipart/form-data">
+                    <label for="one">Name</label>
+                    <input id="one" type="text" class="form-control" name="name">
+
+                    <label for="codes">Product code</label>
+                    <input id="codes" type="text" class="form-control" name="code">
+
+                    <label for="two">Category</label>
+                    <select id="two" type="text" class="form-control" name="category">
+                    <option value="mobiles">mobile</option>
+                    <option value="laptops">laptop</option>
+                    <option value="tablets">tablet</option>
+                    <option value="smartwatch">smartwatch</option>
+                    </select>
+
+                    <label for="three">Price</label>
+                    <input id="three" type="text" class="form-control" name="price">
+
+                    <label for="four">Description</label>
+                    <input type="text" id="four" class="form-control" name="description">
+
+                    <label for="five">Image</label>
+                    <input type="file" id="five" class="form-control" name="Image">
+
+                    <button type="submit" class="btn btn-warning mt-4">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
