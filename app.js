@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config()
+
 var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
 
@@ -30,7 +32,7 @@ db.connect((err)=>
   if(err)
   {console.log("connection error"+err);}
   else
-  {console.log("Database connected to port:27017");}
+  {console.log("Database connected to Atlas");}
 });
 
 app.use('/', userRouter);
