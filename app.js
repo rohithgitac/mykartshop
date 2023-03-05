@@ -15,6 +15,10 @@ var fileupload = require('express-fileupload');
 var db = require('./configuration/connection');
 var session=require('express-session');
 
+const MongoStore = require('connect-mongo'); //for storing session in mongodb
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -26,7 +30,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileupload());
-app.use(session({secret:'key',cookie:{maxAge:60000000}}));
+//app.use(session({secret:'key',cookie:{maxAge:60000000}}));
+app.use(session({
+  secret: 'foo',
+  store: MongoStore.create({
+    mongoUrl: 'mongodb+srv://rohithabcontact:HpOreQm0HYnAPBIk@cluster0.droghcc.mongodb.net/ecommerse',
+    ttl: 14 * 24 * 60 * 60
+  })
+}));
 db.connect((err)=>
 {
   if(err)
