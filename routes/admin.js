@@ -44,7 +44,7 @@ router.post('/adminlogin',(req,res)=>{
   })
   else{
     adminhep.logincheckfunc(req.body).then((checkstatus)=>{
-      console.log(checkstatus);
+     // console.log(checkstatus);
       if(checkstatus.status){
         let checkedstatus=checkstatus.status;
         req.session.admin=checkstatus;
@@ -113,11 +113,11 @@ router.get('/category/:allproducts/add-mobile',verifyadminlogin,(req,res)=>{
 })
 router.post('/category/:allproducts/add-mobile',verifyadminlogin,async(req,res)=>{
   let {allproducts} = req.params;
-  console.log(allproducts);
+  //console.log(allproducts);
   await db.get().collection(collect4admin.ALLPRODUCT_COLLECTION).insertOne(req.body)
   .then((productfulldet)=>{
   let proid=productfulldet.insertedId;
-  console.log(proid);
+  //console.log(proid);
   if(req.files?.Image){
     let img =req.files.Image;
     img.mv('./public/allproductimages/'+proid+'.jpg')
@@ -179,7 +179,7 @@ router.get('/:categoryname/deleteproduct/',verifyadminlogin,(req,res)=>{
   let deletecategory=req.params.categoryname;
   let deleteproductid= req.query.id;
   adminhep.deleteadminproducts(deletecategory,deleteproductid).then((reply)=>{
-    console.log(reply);
+    //console.log(reply);
     if(deletecategory==='mobileproducts'){
     res.redirect('/admin/category/mobileproducts');}
     else if(deletecategory==='laptopproducts'){
@@ -193,7 +193,7 @@ router.get('/:categoryname/deleteproduct/',verifyadminlogin,(req,res)=>{
 router.get('/:categoryname/editproduct/',verifyadminlogin,(req,res)=>{
   let editcategory=req.params.categoryname;
   let editproductsid=req.query.id;
-  console.log(editproductsid);
+  //console.log(editproductsid);
   adminhep.editadminproducts(editcategory,editproductsid).then((productobj)=>{
     if(editcategory==='mobileproducts'){
     res.render('admin/edit-products',{productobj,admin:true,editcategory,adminsuccess:req.session.admin});}

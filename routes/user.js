@@ -100,7 +100,7 @@ router.post('/login',(req,res)=>{
     if(response.result===true){
     req.session.user=response.user;
     req.session.user.loggcheck=true;
-    console.log(req.session.user);
+    //console.log(req.session.user);
     res.redirect('/')
     }
     else if(response.result===false){
@@ -121,12 +121,12 @@ router.get('/logout',(req,res)=>{
 router.get('/cart',verifyLogin,async(req,res)=>{
   
   let pro=await getuserhelper.getcartItemsfunc(req.session.user._id);
-  console.log(pro);
+  //console.log(pro);
   let totalprice=0;
   let cartsize=await getuserhelper.getcartcount(req.session.user._id);
   if(pro.length>0){
   let totalvalue=await getuserhelper.gettotalamountfunc(req.session.user._id);
-  console.log(totalvalue);
+  //console.log(totalvalue);
   totalprice=totalvalue[0].total; 
   res.render('user/cart',{pro,userinfos:req.session.user,totalprice,cartsize})}
   else{
@@ -181,7 +181,7 @@ router.get('/profile',verifyLogin,(req,res)=>{
   res.render('user/profileview',{userinfos:req.session.user})
 })
 router.post('/profile',verifyLogin,(req,res)=>{
-  console.log(req.body);
+ // console.log(req.body);
   getuserhelper.updateprofilefunc(req.body,req.session.user._id).then((response)=>{
     //console.log(response);
     res.redirect('/')
