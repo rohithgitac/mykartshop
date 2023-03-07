@@ -1,11 +1,11 @@
-function addtofunc(cat,proid){
+function addtofunc(cat,proid,proname){
   let count=document.getElementById('cart-count').innerHTML;
   countnum=parseInt(count)
   $.ajax({
     url:'/section/'+cat+'/addtocart/'+proid,
     method:'get',
     success:()=>{
-      alert("Item added successfully..!!!")
+      alert( proname+' added to your cart..!!')
       document.getElementById('cart-count').innerHTML=countnum+1;
     }
 

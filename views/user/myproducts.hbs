@@ -29,7 +29,11 @@
               <h6>Rs.<b>{{this.price}}</b>/-</h6>
               </p>
               <p class="card-text">{{this.description}}</p>
-              <button class="btn btn-primary " onclick="addtofunc('{{this.category}}','{{this._id}}')">Add to cart</button>
+              {{#if ...userinfos}}
+              <button class="btn btn-primary " onclick="addtofunc('{{this.category}}','{{this._id}}','{{this.name}}')">Add to cart</button>
+              {{else}}
+              <a class="btn btn-info " href="/login">Add to cart</a>
+              {{/if}}
             </div>
           </div>
         </div>
