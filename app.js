@@ -33,6 +33,8 @@ app.use(fileupload());
 //app.use(session({secret:'key',cookie:{maxAge:60000000}}));
 app.use(session({
   secret: 'foo',
+  resave: true,
+  saveUninitialized: true,
   store: MongoStore.create({
     mongoUrl: 'mongodb+srv://rohithabcontact:HpOreQm0HYnAPBIk@cluster0.droghcc.mongodb.net/ecommerse',
     ttl: 14 * 24 * 60 * 60

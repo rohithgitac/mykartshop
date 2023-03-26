@@ -1,6 +1,7 @@
 <section style="margin-top: 6rem;">
 <div class="container">
 <h2  class="text-center">Cart items</h2 > <p style="color:white">User : {{userinfos.name}}</p>
+<div class="table-responsive">
 <table class="table table-bordered">
     <thead>
     <tr class="text-center my-auto">
@@ -37,6 +38,7 @@
         {{/each}}
     </tbody>
 </table>
+</div>
 <hr >
 <h3 class="text-right mr-5 "><b><i>Total : Rs.<span id="total">{{totalprice}}</span> </i></b>/-
 <br>
@@ -44,5 +46,17 @@
 <hr >
 </div>
 </section>
+<script>
+var button = document.getElementById("placeorder")
+  var total =Number( document.getElementById("total").innerHTML)
+  console.log(total)
+  if(total===0)
+{
+  button.classList.add("disabled")
+}
+ else{
+  button.classList.remove("disabled")
+ }
+</script>
 
 

@@ -56,16 +56,19 @@ a.hoverimport:hover{
           </li>
           {{/if}}
         </ul>
-        <ul class="navbar-nav ml-auto mr-3 ">
+        <ul class="navbar-nav ml-auto mr-2 ">
           {{#if userinfos}}
           <li class="nav-item  my-auto mx-auto pr-md-3"><a href="/profile"><i style='font-size:30px;border: 3px solid #abb0f3;  border-radius: 16px; color:rgba(75, 80, 75, 0.984);background-color: rgb(205, 227, 146);' class='far'>&#xf2bd;</i></a></li>
           <li class="nav-item  my-auto"><a  class="nav-link border bg-secondary rounded text-center text-white hoverimport"  href="/logout">{{userinfos.name}}-logout</a></li>
           {{else}}
           <li class="nav-item p-1"><a class="nav-link border bg-warning rounded text-center text-dark"  href="/login"><i class='fas fa-sign-out-alt'></i>Login/signup</a> </li>
           {{/if}}
+            <form action="/search" method="get" class="form-inline my-2 my-lg-0 ml-1">
+             <input id="searchcontent" type="text" class="form-control" name="q" placeholder="Search...">
+             <button class="btn btn-primary" type="submit">Search</button>  
+            </form>
             
         </ul>
-     </nav>
         
       
       </div>

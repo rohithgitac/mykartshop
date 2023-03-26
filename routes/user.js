@@ -37,6 +37,13 @@ router.get('/',async(req, res)=> {
  
   
 });
+router.get('/search',async(req,res)=>{
+  const query = req.query.q
+
+  const result = await getuserhelper.performSearch(query)
+
+  res.render('user/usersearch',{query,result})
+})
 router.get('/section/:categorys',async(req,res)=>{
   const {categorys}=req.params;
   if(req.session.user){

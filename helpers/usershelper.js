@@ -318,6 +318,20 @@ module.exports = {
             resolve(updatestatus)    
         }
         )
+    },
+
+    performSearch : (query)=> {
+        return new Promise(async(resolve,reject)=>{
+            const keyword = {
+                $or:[
+                {name : {$regex : query,  $options : 'i'}},
+                {category:{$regex : query, $options : 'i'}}
+            ]
+            }
+            let searchProducts=await db.get().collection(collectdb.ALLPRODUCT_COLLECTION)
+                                                .find({...keyword}).toArray()
+            resolve(searchProducts)
+        })
     }
 
 }
